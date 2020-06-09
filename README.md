@@ -14,6 +14,7 @@ Heute haben mein Teampartner und ich zusammen mit Herr Calisto unsere Fragen gek
 # Wichtige Befehle
 
 1. Gitbash
+
 |       Befehl       |          Was macht es?                     |
 | :----------------- | :------------------------------            |
 | cd                 | zu Verzeichnis wechseln                    |
@@ -27,6 +28,7 @@ Heute haben mein Teampartner und ich zusammen mit Herr Calisto unsere Fragen gek
 | git status         | Status anzeigen                            |
 
 2. Vagrant
+
 |       Befehl       |          Was macht es?          |
 | :----------------- | :------------------------------ |
 | vagrant status     | Zeigt Status von VM an          |
