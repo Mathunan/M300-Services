@@ -62,3 +62,8 @@ Am Anfang hat es die eine VM nicht aufgesetzt. Nachdem ich im Internet nach mög
 	vagrant destroy -f
 
 Leider hat es dann immernoch nicht funktioniert. Nachdem ich es mit Herr Calisto nochmals probiert habe, hat es auf einmal geklappt.
+
+
+### Reflexion LB2
+
+Leider war mir der Auftrag erst gegen den Schluss klar und somit habe ich sehr viel Zeit verloren. Ab und zu funktionerte bei mir etwas nicht, ohne einen "richtigen" Grund zu haben, wodurch ich noch mehr Zeit verloren habe. Aber schlussendlich konnte ich die mir ein Basiswissen zu Github erarbeiten und es war auch sehr interessant.
