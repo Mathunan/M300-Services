@@ -26,8 +26,10 @@ Das MySQL User Interface ist via [http://localhost:8080/adminer.php](http://loca
 
 ### Sicherheit
 
-* 
-* 
+Syslog Protokollierung:
+
+    $ docker run -d --log-driver=syslog ubuntu bash -c 'i=0; while true; do i=$((i+1)); echo "docker $i"; sleep 1; done;'
+    $ tail -f /var/log/syslog
 
 
 ### Vorgehensweise
@@ -56,12 +58,6 @@ $ docker run --name my-wordpress \
    -e WORDPRESS_DB_PASSWORD=root \
    --network wp-test \
    -d wordpress
-
-Syslog
-Protokollierung in das System-Log (syslog) des Hosts:
-
-    $ docker run -d --log-driver=syslog ubuntu bash -c 'i=0; while true; do i=$((i+1)); echo "docker $i"; sleep 1; done;'
-    $ tail -f /var/log/syslog
 
 ### Aufgetretene Probleme
 
