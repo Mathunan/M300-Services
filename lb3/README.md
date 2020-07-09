@@ -18,11 +18,9 @@ Das MySQL User Interface ist via [http://localhost:8080/adminer.php](http://loca
 
 ### Tests
 
-* Webseite aufrufen: http://localhost:8080/adminer.php
-  Erfolgreich: Ja
-
-* Anmelden auf Webseite.
+* Webseite aufrufen: http://localhost:8080
   Erfolgreich: Nein
+
 
 ### Sicherheit
 
@@ -32,7 +30,16 @@ Syslog Protokollierung:
     $ tail -f /var/log/syslog
 
 
+Überwachen und Benachrichtigen:
+
+Wir haben folgenden Befehl eingegeben, um dann die Konfigurationen auf der Webseite vorzunehmen. Leider konnten wir die Webseite nicht öffnen und da wir schon unter Zeitdruck waren, konnten wir leider nicht weitermachen.
+
+    $ docker run -d --name cadvisor -v /:/rootfs:ro -v /var/run:/var/run:rw -v /sys:/sys:ro -v /var/lib/docker/:/var/lib/docker:ro -p 8080:8080 google/cadvisor:latest
+
+
 ### Vorgehensweise
+
+Container Verbinden
 
 Wir haben einen MySQL-Container und WordPress-Container erstellt und miteinander verbunden.
 
@@ -59,6 +66,17 @@ $ docker run --name my-wordpress \
    --network wp-test \
    -d wordpress
 
+
+Volumes
+
+Zuerst haben wir einen Volume erstellt:
+
+    $ docker volume create volumename
+
+Danach habe wir es einem Container angehängt, welches erstellt werden sollte:
+
+    $ docker run  -it --name c2 -v volumename:/var/lib/mysql --rm busybox
+
 ### Aufgetretene Probleme
 
 * Docker Image konnten nicht heruntergeladen werden: Error response from daemon: Get https://index.docker.io/v1/search?q=mysql&n=25: dial tcp: lookup index.docker.io on 10.0.2.3:53: read udp 10.0.2.15:38172->10.0.2.3:53: i/o timeout
@@ -68,3 +86,15 @@ $ docker run --name my-wordpress \
       nameserver 8.8.8.8
       Speichern und verlassen
       sudo resolvconf -u
+
+### Befehle
+
+docker run hello-world  | Schauen, ob Docker korrekt funktioniert
+docker ps               | Aktive Container anzeigen
+docker ps -a            | Alle Container anzeigen
+docker images           | Lokale Images anzeigen
+docker rm name          | Container löschen
+docker create name      | Container erstellen
+docker start id         | Container starten
+docker stop             | Stoppt Container ohne sie zu entfernen
+docker kill             | Container wird sofort gestoppt
